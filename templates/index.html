@@ -1,0 +1,28 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Review Slides</title>
+<link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<div id="slides">
+{% for slide_number in range(1, num_slides + 1) %}
+<div class="slide" id="slide-{{ slide_number }}">
+{% include "slide.html" with slide_number=slide_number %}
+</div>
+{% endfor %}
+</div>
+<div id="controls">
+<button id="previous" onclick="showPreviousSlide()">Previous</button>
+<button id="next" onclick="showNextSlide()">Next</button>
+</div>
+</body>
+</html>
+
+
+
