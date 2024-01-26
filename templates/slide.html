@@ -1,0 +1,85 @@
+
+
+
+{% extends "index.html" %}
+
+{% block content %}
+<h1>Slide {{ slide_number }}</h1>
+<p>{{ slide_content }}</p>
+{% endblock %}
+
+
+
+custom.css
+
+
+css
+body {
+background-color: #ffffff;
+font-family: Arial, sans-serif;
+}
+
+#slides {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+}
+
+.slide.active {
+display: block;
+}
+
+#controls {
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 50px;
+background-color: #000000;
+color: #ffffff;
+}
+
+#previous, #next {
+float: left;
+width: 50%;
+height: 100%;
+border: none;
+outline: none;
+background-color: #000000;
+color: #ffffff;
+font-size: 16px;
+cursor: pointer;
+}
+
+#previous:hover, #next:hover {
+background-color: #333333;
+}
+
+#presentation-mode {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #000000;
+color: #ffffff;
+font-size: 24px;
+display: none;
+}
+
+#presentation-mode .slide {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
+
